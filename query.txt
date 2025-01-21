@@ -1,0 +1,8 @@
+SELECT name AS COMP,
+SUBSTRING(ts, 1, 10) AS DATE,
+AVG(volatility) AS AVG_VOL,
+MAX(volatility) AS MAX_VOL,
+MIN(volatility) AS MIN_VOL
+FROM cis9760_athena_queries_rn
+GROUP BY SUBSTRING(ts, 1, 10), name 
+ORDER BY COMP ASC, DATE ASC; 
